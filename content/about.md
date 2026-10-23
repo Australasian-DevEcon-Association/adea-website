@@ -13,4 +13,8 @@ mission:
   - Increase the funding and recognition of development economics as a priority area, advocating for more resources and support from funding bodies, academic institutions, government agencies and NGOs.
   - Enhance the capacity and skills of development economists in the region, providing training, workshops, seminars, conferences and other learning opportunities.
   - Raise the awareness and appreciation of development economics among the public, media, educators and students, highlighting its relevance, importance and contributions to society.
+networks_heading: Other networks for development economists
+networks:
+  - {name: Sydney Development Economics Group (SDEG), url: "https://www.sydneydevecon.org/", description: Connects Sydney-based researchers in development economics through regular workshops that pair new research with practical tutorials.}
+  - {name: International Development Economics Association (IDEA), url: "https://idea.devecon.org/", description: A global professional association for development economists that runs virtual research seminars and career-skills sessions.}
 ---

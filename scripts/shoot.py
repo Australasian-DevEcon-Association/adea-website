@@ -10,7 +10,7 @@ os.makedirs(SHOTS, exist_ok=True)
 
 PAGES = [
     ("_site/index.html", "home.png", 2600),
-    ("_site/about.html", "about.png", 1900),
+    ("_site/about.html", "about.png", 2700),
     ("_site/news.html", "news.png", 1900),
     ("_site/news/welcome.html", "welcome.png", 1800),
     ("_site/members.html", "members.png", 3200),

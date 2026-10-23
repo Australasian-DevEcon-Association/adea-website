@@ -31,4 +31,21 @@
   </div>
 </section>
 
+{% if page.networks %}
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Related networks</p>
+    <h2>{{ page.networks_heading }}</h2>
+    <div class="story-list">
+      {% for n in page.networks %}
+      <a class="story-card reveal" href="{{ n.url }}" target="_blank" rel="noopener">
+        <h3>{{ n.name }}</h3>
+        <p>{{ n.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {% endblock %}
