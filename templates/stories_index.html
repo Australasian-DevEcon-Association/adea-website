@@ -3,6 +3,7 @@
 
 <section class="section">
   <div class="wrap">
+    {% if stories %}
     <div class="reveal" style="max-width:46rem;">
       <p class="eyebrow">Research stories</p>
       <h1>{{ page.heading }}</h1>
@@ -21,11 +22,12 @@
       </a>
       {% endfor %}
     </div>
+    {% endif %}
 
     {% if page.briefs %}
-    <div class="reveal" style="max-width:46rem; margin-top:4.5rem;">
+    <div class="reveal" style="max-width:46rem;{% if stories %} margin-top:4.5rem;{% endif %}">
       <p class="eyebrow">Policy briefs</p>
-      <h2>{{ page.briefs_heading }}</h2>
+      {% if stories %}<h2>{{ page.briefs_heading }}</h2>{% else %}<h1>{{ page.briefs_heading }}</h1>{% endif %}
       <p class="lede">{{ page.briefs_intro }}</p>
     </div>
     <div class="story-list">
