@@ -144,6 +144,12 @@ strong { font-weight: 600; color: var(--ink-strong); }
 }
 .nav a:hover { color: var(--accent); text-decoration: none; }
 .nav a.is-active { color: var(--accent); }
+.nav__links { display: flex; align-items: center; gap: 1.7rem; }
+.nav-toggle {
+  display: none;
+  background: none; border: 0; padding: 0.4rem; margin-right: -0.4rem;
+  color: var(--ink-strong); cursor: pointer; line-height: 0;
+}
 
 .btn {
   display: inline-block;
@@ -739,6 +745,21 @@ figcaption, .figcredit {
 }
 @media (max-width: 620px) {
   .nav { gap: 1.1rem; }
-  .nav a:not(.btn) { display: none; }   /* simplify: keep only the Join button + brand on small screens */
+  /* small screens: links collapse behind the menu button into a dropdown panel */
+  .js .nav-toggle { display: block; }
+  .js .nav__links {
+    display: none;
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 0.5rem var(--pad-x) 1rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+  }
+  .js .site-header.is-open .nav__links { display: flex; }
+  .nav__links a { padding: 0.8rem 0; font-size: 1.05rem; border-top: 1px solid var(--border); }
+  .nav__links a:first-child { border-top: 0; }
+  html:not(.js) .nav { flex-wrap: wrap; justify-content: flex-end; }
+  html:not(.js) .nav__links { flex-wrap: wrap; gap: 0 1.1rem; }
+  html:not(.js) .nav__links a { border-top: 0; padding: 0.2rem 0; font-size: 0.9rem; }
   .section-number { display: none; }
 }

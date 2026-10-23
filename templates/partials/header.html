@@ -5,13 +5,18 @@
       <span class="brand__name">ADEA</span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="{{ rel }}index.html"{% if page.nav == 'home' %} class="is-active"{% endif %}>Home</a>
-      <a href="{{ rel }}about.html"{% if page.nav == 'about' %} class="is-active"{% endif %}>About</a>
-      <a href="{{ rel }}news.html"{% if page.nav == 'news' %} class="is-active"{% endif %}>News and Events</a>
-      <a href="{{ rel }}stories.html"{% if page.nav == 'research' %} class="is-active"{% endif %}>Research</a>
-      <a href="{{ rel }}members.html"{% if page.nav == 'members' %} class="is-active"{% endif %}>Members</a>
+      <div class="nav__links" id="nav-links">
+        <a href="{{ rel }}index.html"{% if page.nav == 'home' %} class="is-active"{% endif %}>Home</a>
+        <a href="{{ rel }}about.html"{% if page.nav == 'about' %} class="is-active"{% endif %}>About</a>
+        <a href="{{ rel }}news.html"{% if page.nav == 'news' %} class="is-active"{% endif %}>News and Events</a>
+        <a href="{{ rel }}stories.html"{% if page.nav == 'research' %} class="is-active"{% endif %}>Research</a>
+        <a href="{{ rel }}members.html"{% if page.nav == 'members' %} class="is-active"{% endif %}>Members</a>
+      </div>
       <!-- Placeholder: membership login + dues handled by Stripe at launch (not wired in the demo) -->
       <a class="btn btn--accent" href="#join" title="Membership join and login will run through Stripe at launch">Join</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
     </nav>
   </div>
 </header>

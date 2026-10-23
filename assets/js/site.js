@@ -33,6 +33,20 @@
   }
 })();
 
+// Mobile menu: the button toggles the nav links panel; Escape closes it.
+(function () {
+  var header = document.querySelector('.site-header');
+  var btn = header && header.querySelector('.nav-toggle');
+  if (!btn) return;
+  function set(open) {
+    header.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function () { set(!header.classList.contains('is-open')); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+})();
+
 // Member directory: live faceted filter (search + topic + country). DOM-based,
 // no fetch, so it works when the file is opened directly. Degrades to the full
 // list if JS is off.
