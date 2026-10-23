@@ -654,7 +654,7 @@ figcaption, .figcredit {
 .site-footer a { color: #e7e1d6; }
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 2.5rem;
   max-width: var(--maxw-wide);
   margin: 0 auto;
