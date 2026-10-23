@@ -21,6 +21,22 @@
       </a>
       {% endfor %}
     </div>
+
+    {% if page.briefs %}
+    <div class="reveal" style="max-width:46rem; margin-top:4.5rem;">
+      <p class="eyebrow">Policy briefs</p>
+      <h2>{{ page.briefs_heading }}</h2>
+      <p class="lede">{{ page.briefs_intro }}</p>
+    </div>
+    <div class="story-list">
+      {% for b in page.briefs %}
+      <a class="story-card reveal" href="{{ b.url }}" target="_blank" rel="noopener">
+        <div class="story-card__meta">{{ b.outlet }} &middot; {{ b.date }}</div>
+        <h3>{{ b.title }}</h3>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
 </section>
 
