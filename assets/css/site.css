@@ -644,6 +644,22 @@ figcaption, .figcredit {
 .story-card:hover h3 { color: var(--accent); }
 .story-card p { color: var(--slate); max-width: 46rem; }
 
+/* policy brief cards: member headshots beside the text */
+.brief-card { display: flex; gap: 1.5rem; align-items: flex-start; }
+.brief-card__faces { display: flex; flex-shrink: 0; width: 5.5rem; padding-top: 0.2rem; }
+.brief-card__faces img {
+  width: 3.4rem; height: 3.4rem; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--paper); display: block;
+}
+.brief-card__faces img + img { margin-left: -1.3rem; }
+.brief-card__authors { color: var(--slate); margin: 0; }
+@media (max-width: 560px) {
+  .brief-card { gap: 1rem; }
+  .brief-card__faces { width: 4rem; }
+  .brief-card__faces img { width: 2.6rem; height: 2.6rem; }
+  .brief-card__faces img + img { margin-left: -1rem; }
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {

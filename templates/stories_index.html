@@ -30,11 +30,19 @@
       {% if stories %}<h2>{{ page.briefs_heading }}</h2>{% else %}<h1>{{ page.briefs_heading }}</h1>{% endif %}
       <p class="lede">{{ page.briefs_intro }}</p>
     </div>
+    {% set photos = {} %}
+    {% for grp in ['leadership', 'members', 'phd_students'] %}{% for m in members_data[grp] | default([]) %}{% if m.photo %}{% set _ = photos.update({m.slug: m.photo}) %}{% endif %}{% endfor %}{% endfor %}
     <div class="story-list">
       {% for b in page.briefs %}
-      <a class="story-card reveal" href="{{ b.url }}" target="_blank" rel="noopener">
-        <div class="story-card__meta">{{ b.outlet }} &middot; {{ b.date }}</div>
-        <h3>{{ b.title }}</h3>
+      <a class="story-card brief-card reveal" href="{{ b.url }}" target="_blank" rel="noopener">
+        <div class="brief-card__faces">
+          {% for slug in b.members | default([]) %}{% if photos[slug] %}<img src="{{ rel }}assets/images/{{ photos[slug] }}" alt="" loading="lazy">{% endif %}{% endfor %}
+        </div>
+        <div>
+          <div class="story-card__meta">{{ b.outlet }} &middot; {{ b.date }}</div>
+          <h3>{{ b.title }}</h3>
+          {% if b.authors %}<p class="brief-card__authors">{{ b.authors }}</p>{% endif %}
+        </div>
       </a>
       {% endfor %}
     </div>
