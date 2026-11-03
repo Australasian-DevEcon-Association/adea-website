@@ -4,8 +4,8 @@ title: Research
 nav: research
 heading: Research stories
 intro: Accessible write-ups of work by ADEA members, linked from our newsletter. Each story distills a paper into a short read for journalists, policy-makers, and fellow researchers.
-briefs_heading: Recent policy briefs by ADEA members
-briefs_intro: Short columns in which members explain their research for policy readers. To add yours, email info@ausdevea.org.
+briefs_heading: Research by ADEA members
+briefs_intro: Short columns in which members explain their research for policy readers. To add yours, email <a href="mailto:info@ausdevea.org">info@ausdevea.org</a>.
 briefs:
   - {title: "Who gets Pacific remittances and state assistance, and how much?", url: "https://devpolicy.org/who-gets-pacific-remittances-and-state-assistance-and-how-much/", outlet: Devpolicy Blog, date: October 2026, authors: "Emilia Tjernström", members: [emilia-tjernstrom]}
   - {title: "Can voting out leaders improve local service delivery?", url: "https://voxdev.org/topic/institutions-political-economy/can-voting-out-leaders-improve-local-service-delivery", outlet: VoxDev, date: July 2026, authors: "Samuel Bazzi, Masyhur Hilmy, Benjamin Marx, Mahvish Shaukat, and Andreas Stegmann", members: [masyhur-hilmy]}
@@ -19,7 +19,7 @@ briefs:
   - {title: "Data analytics sharpens development policy in the Pacific and Timor-Leste", url: "https://devpolicy.org/data-analytics-sharpens-development-policy-in-the-pacific-and-timor-leste-20260501/", outlet: Devpolicy Blog, date: May 2026, authors: "Chris Hoy, Diana Contreras Suarez, and Kushneel Prakash", members: [christopher-hoy, diana-contreras, kushneel-prakash]}
   - {title: "Palm oil, poverty and the price of progress", url: "https://devpolicy.org/palm-oil-poverty-and-the-price-of-progress-20260417/", outlet: Devpolicy Blog, date: April 2026, authors: "Ryan Edwards", members: [ryan-edwards]}
   - {title: "Why graduates struggle to find jobs in West Africa", url: "https://voxdev.org/topic/labour-markets/why-graduates-struggle-find-jobs-west-africa", outlet: VoxDev, date: March 2026, authors: "Esther Mirjam Girsberger and Romuald Méango", members: [esther-mirjam-girsberger]}
-  - {title: "Making high-quality data accessible and usable", url: "https://voxdev.org/topic/methods-measurement/making-high-quality-data-accessible-and-usable", outlet: VoxDev Blog, date: December 2025, authors: "Ricardo Dahis", members: [ricardo-dahis]}
+  - {title: "Making high-quality data accessible and usable", url: "https://voxdev.org/topic/methods-measurement/making-high-quality-data-accessible-and-usable", outlet: VoxDev, date: December 2025, authors: "Ricardo Dahis", members: [ricardo-dahis]}
   - {title: "How progressive taxation affects tax compliance in developing countries", url: "https://voxdev.org/topic/public-economics/how-progressive-taxation-affects-tax-compliance-developing-countries", outlet: VoxDev, date: November 2025, authors: "Christopher Hoy", members: [christopher-hoy]}
   - {title: "No evidence SWP affected domestic farm worker earnings", url: "https://devpolicy.org/no-evidence-swp-affected-domestic-farm-worker-earnings-20251002/", outlet: Devpolicy Blog, date: October 2025, authors: "Ryan Edwards and Toan Nguyen", members: [ryan-edwards]}
   - {title: "The first Falepili Union visa ballot: a preliminary assessment", url: "https://devpolicy.org/the-first-falepili-union-visa-ballot-a-preliminary-assessment-20250826/", outlet: Devpolicy Blog, date: August 2025, authors: "Ryan Edwards", members: [ryan-edwards]}

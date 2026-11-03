@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section section--intro">
+  <div class="wrap">
+    <div class="page-intro reveal">
+      <h1>{{ page.heading }}</h1>
+      <p class="lede">{{ page.intro }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="tiers">
+      {% for t in page.tiers %}
+      <div class="tier">
+        <h2 class="tier__name">{{ t.name }}</h2>
+        <p class="tier__price">{{ t.price }} <span>per year</span></p>
+        <p class="tier__who">{{ t.who }}</p>
+        <div class="tier__actions">
+          <a class="btn btn--accent" href="{{ t.once }}">Pay {{ t.price }} for one year</a>
+          <a class="btn" href="{{ t.auto }}">Renew automatically each year</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>{{ page.renew_heading }}</h2>
+    {% for p in page.renew %}<p style="max-width:42rem;">{{ p | safe }}</p>{% endfor %}
+  </div>
+</section>
+
+{% endblock %}

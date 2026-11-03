@@ -55,7 +55,7 @@
     <p class="filters__count" id="member-count" aria-live="polite"></p>
 
     <div class="member-grid" id="member-grid">
-      {% for m in members_data.members %}
+      {% for m in members_data.directory %}
       {% include "partials/member_card.html" %}
       {% endfor %}
     </div>
@@ -68,7 +68,7 @@
 <section class="section section--alt">
   <div class="wrap">
     <h2>{{ page.phd_heading }}</h2>
-    <div class="member-grid member-grid--lead">
+    <div class="member-grid member-grid--lead" data-filtered>
       {% for m in members_data.phd_students %}
       {% include "partials/member_card.html" %}
       {% endfor %}

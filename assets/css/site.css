@@ -771,3 +771,21 @@ figcaption, .figcredit {
   html:not(.js) .nav__links a { border-top: 0; padding: 0.2rem 0; font-size: 0.9rem; }
   .section-number { display: none; }
 }
+
+/* ---------- join page ---------- */
+
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+}
+.tier {
+  border: 1px solid var(--border);
+  background: var(--paper);
+  padding: 2rem;
+}
+.tier__name { margin: 0 0 0.4rem; }
+.tier__price { font-family: var(--font-display); font-size: 2rem; margin: 0 0 0.6rem; }
+.tier__price span { font-family: var(--font-body); font-size: 1rem; color: var(--slate); }
+.tier__who { color: var(--slate); }
+.tier__actions { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; margin-top: 1.5rem; }

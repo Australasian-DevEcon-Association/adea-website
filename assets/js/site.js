@@ -56,6 +56,7 @@
   if (!form || !grid) return;
 
   var cards = Array.prototype.slice.call(grid.querySelectorAll('.member-card'));
+  document.querySelectorAll('[data-filtered] .member-card').forEach(function (card) { cards.push(card); });
   var search = document.getElementById('f-search');
   var topic = document.getElementById('f-topic');
   var country = document.getElementById('f-country');
@@ -81,6 +82,11 @@
         && (!c || listHas(card.getAttribute('data-countries'), c));
       card.hidden = !ok;
       if (ok) shown++;
+    });
+    // hide the PhD section when none of its cards match
+    document.querySelectorAll('[data-filtered]').forEach(function (g) {
+      var section = g.closest('section');
+      if (section) section.hidden = !g.querySelector('.member-card:not([hidden])');
     });
     var filtered = q || t || c;
     count.textContent = filtered

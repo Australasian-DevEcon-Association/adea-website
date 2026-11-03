@@ -7,6 +7,7 @@ Actions workflow that runs it) turns that into the deployed HTML. Run locally wi
 import os
 import re
 import json
+import unicodedata
 import shutil
 import datetime
 import markdown
@@ -107,11 +108,62 @@ def rel_for(out_relpath):
     return "../" * depth
 
 
+# the member form stored ISO codes ("Monash University, AUS"); show country names instead
+COUNTRY_CODES = {"AUS": None, "GBR": "United Kingdom", "USA": "United States",
+                 "VNM": "Vietnam", "LKA": "Sri Lanka", "IND": "India"}
+
+
+def plain_affiliation(text):
+    """Replace a trailing ISO country code; Australian affiliations drop it."""
+    m = re.match(r"^(.*), ([A-Z]{3})$", text)
+    if not m or m.group(2) not in COUNTRY_CODES:
+        return text
+    country = COUNTRY_CODES[m.group(2)]
+    return f"{m.group(1)}, {country}" if country else m.group(1)
+
+
+def surname_key(m):
+    """Sort by surname (last word of the name) unless the record sets sort_name."""
+    name = m.get("sort_name") or m["name"].split()[-1]
+    plain = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    return (plain.lower(), m["name"].lower())
+
+
+def apply_facet_map(data):
+    """Relabel member-entered topics and countries through data/facet_map.json."""
+    path = os.path.join(ROOT, "data", "facet_map.json")
+    if not os.path.exists(path):
+        return
+    fmap = json.load(open(path, encoding="utf-8"))
+    for field in ("topics", "countries"):
+        labels = set()
+        for group in ("leadership", "members", "phd_students"):
+            for m in data.get(group, []):
+                out = []
+                for raw in m.get(field) or []:
+                    label = fmap[field].get(raw, raw)
+                    if label and label not in out:
+                        out.append(label)
+                m[field] = out
+                labels.update(out)
+        data[field] = sorted(labels, key=str.lower)
+
+
 def load_members():
     path = os.path.join(ROOT, "data", "members.json")
-    if os.path.exists(path):
-        return json.load(open(path, encoding="utf-8"))
-    return {"leadership": [], "members": [], "topics": [], "countries": []}
+    if not os.path.exists(path):
+        return {"leadership": [], "members": [], "directory": [], "topics": [], "countries": []}
+    data = json.load(open(path, encoding="utf-8"))
+    for group in ("leadership", "members", "phd_students"):
+        for m in data.get(group, []):
+            if m.get("institution"):
+                m["institution"] = plain_affiliation(m["institution"])
+    apply_facet_map(data)
+    data["members"] = sorted(data.get("members", []), key=surname_key)
+    data["phd_students"] = sorted(data.get("phd_students", []), key=surname_key)
+    # the directory lists everyone except PhD members, leadership included
+    data["directory"] = sorted(data.get("leadership", []) + data["members"], key=surname_key)
+    return data
 
 
 def load_stories():
@@ -157,7 +209,7 @@ def main():
     # top-level pages
     for fn, out in [("home.md", "index.html"), ("about.md", "about.html"),
                     ("news.md", "news.html"), ("members.md", "members.html"),
-                    ("stories.md", "stories.html")]:
+                    ("stories.md", "stories.html"), ("join.md", "join.html")]:
         meta, body = parse_frontmatter(os.path.join(CONTENT, fn))
         render_page(meta, body, out, **ctx)
 
