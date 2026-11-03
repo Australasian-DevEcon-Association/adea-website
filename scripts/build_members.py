@@ -28,6 +28,7 @@ MANIFEST = os.path.join(SCRAPE, "image_manifest.csv")
 ENRICH = os.path.join(ROOT, "data", "members_enrichment.json")
 OUT_JSON = os.path.join(ROOT, "data", "members.json")
 OUT_IMG = os.path.join(ROOT, "assets", "images", "members")
+PHOTO_SHORT_EDGE = 600   # px; stored headshots keep their aspect, short edge capped here
 
 ROLES = ["President", "Vice President", "Vice-President", "Secretary",
          "Treasurer", "Public Officer"]
@@ -119,11 +120,12 @@ def copy_photo(data_image, slug, photo_map):
         return ""
     os.makedirs(OUT_IMG, exist_ok=True)
     im = ImageOps.exif_transpose(Image.open(os.path.join(SRC_IMG, local))).convert("RGB")
+    # Keep the whole frame (no square pre-crop): the card crops in CSS with
+    # object-fit/object-position, and members.json "photo_position" overrides per member.
     w, h = im.size
-    s = min(w, h)
-    left = (w - s) // 2
-    top = int((h - s) * 0.12)   # bias the crop toward the top so heads aren't cut off
-    im = im.crop((left, top, left + s, top + s)).resize((420, 420), Image.LANCZOS)
+    scale = min(1.0, PHOTO_SHORT_EDGE / min(w, h))   # never upscale small originals
+    if scale < 1.0:
+        im = im.resize((round(w * scale), round(h * scale)), Image.LANCZOS)
     dst_name = slug + ".jpg"
     im.save(os.path.join(OUT_IMG, dst_name), "JPEG", quality=82, optimize=True, progressive=True)
     return f"members/{dst_name}"

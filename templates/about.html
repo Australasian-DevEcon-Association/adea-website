@@ -5,7 +5,6 @@
   <div class="wrap">
     <div class="hero">
       <div class="hero__text reveal">
-        <p class="eyebrow">About</p>
         <h1>{{ page.heading }}</h1>
         <p class="lede">{{ page.intro }}</p>
       </div>
@@ -18,7 +17,6 @@
 
 <section class="section section--alt">
   <div class="wrap">
-    <p class="eyebrow">Our mission</p>
     <h2>{{ page.mission_heading }}</h2>
     <ol class="mission">
       {% for item in page.mission %}
@@ -34,7 +32,6 @@
 {% if page.networks %}
 <section class="section">
   <div class="wrap">
-    <p class="eyebrow">Related networks</p>
     <h2>{{ page.networks_heading }}</h2>
     <div class="story-list">
       {% for n in page.networks %}

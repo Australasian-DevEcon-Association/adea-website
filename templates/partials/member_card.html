@@ -4,7 +4,7 @@
   data-countries="{% for c in m.countries %}{{ c|lower }}|{% endfor %}">
   <div class="member-card__photo">
     {% if m.photo %}
-    <img src="{{ rel }}assets/images/{{ m.photo }}" alt="{{ m.name }}" loading="lazy" width="420" height="420">
+    <img src="{{ rel }}assets/images/{{ m.photo }}" alt="{{ m.name }}" loading="lazy" width="420" height="420"{% if m.photo_position %} style="object-position: {{ m.photo_position }};"{% endif %}>
     {% else %}
     <span class="member-card__initials" aria-hidden="true">{{ m.name[:1] }}</span>
     {% endif %}

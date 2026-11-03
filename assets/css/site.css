@@ -77,7 +77,7 @@ strong { font-weight: 600; color: var(--ink-strong); }
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -106,6 +106,13 @@ strong { font-weight: 600; color: var(--ink-strong); }
 }
 
 .lede { font-size: 1.2rem; color: var(--slate); max-width: 38rem; }
+
+/* first section of an inner page: less vertical padding than a full section */
+.section--intro { padding: clamp(2.25rem, 4.5vw, 4rem) 0 clamp(2rem, 4vw, 3.5rem); }
+
+/* page intro: heading, then lede */
+.page-intro h1 { margin-bottom: 0.5em; }
+.page-intro .lede { max-width: 62ch; margin: 0; }
 
 /* ---------- header ---------- */
 
@@ -138,11 +145,12 @@ strong { font-weight: 600; color: var(--ink-strong); }
 .nav { display: flex; align-items: center; gap: 1.7rem; }
 .nav a {
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.01em;
 }
 .nav a:hover { color: var(--accent); text-decoration: none; }
+.site-header .btn { font-size: 1.05rem; }
 .nav a.is-active { color: var(--accent); }
 .nav__links { display: flex; align-items: center; gap: 1.7rem; }
 .nav-toggle {
@@ -176,8 +184,8 @@ strong { font-weight: 600; color: var(--ink-strong); }
   grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
-  min-height: min(78vh, 720px);
-  padding: var(--pad-y) 0;
+  min-height: min(64vh, 640px);
+  padding: 0;
 }
 .hero__title {
   font-size: clamp(2.6rem, 6vw, 4.6rem);
@@ -283,7 +291,7 @@ strong { font-weight: 600; color: var(--ink-strong); }
 }
 .news-item__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .news-item__date {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -295,7 +303,7 @@ strong { font-weight: 600; color: var(--ink-strong); }
 .news-item h3 a:hover { color: var(--accent); text-decoration: none; }
 .news-item p { color: var(--slate); margin-bottom: 0.6rem; }
 .read-more {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -326,7 +334,7 @@ strong { font-weight: 600; color: var(--ink-strong); }
 .article__col { max-width: 820px; margin: 0 auto; }
 .article__head { margin-bottom: 2.6rem; }
 .article__meta {
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -341,7 +349,7 @@ strong { font-weight: 600; color: var(--ink-strong); }
 .article__figure { margin: 0 0 2.6rem; }
 .article__figure img { width: 100%; height: auto; display: block; }
 figcaption, .figcredit {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--slate-light);
   margin-top: 0.6rem;
   font-style: italic;
@@ -360,7 +368,7 @@ figcaption, .figcredit {
 
 .member-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: clamp(1.4rem, 2.5vw, 2.2rem);
   margin-top: 2.4rem;
 }
@@ -385,31 +393,31 @@ figcaption, .figcredit {
   align-items: center;
   justify-content: center;
 }
-.member-card__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.member-card__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; display: block; }
 .member-card__initials {
   font-family: var(--font-display);
   font-size: 3rem;
   color: var(--accent);
 }
 .member-card__body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-.member-card__name { font-size: 1.18rem; margin: 0; }
-.member-card__affil { font-size: 0.82rem; color: var(--slate); margin: 0; max-width: none; }
+.member-card__name { font-size: 1.4rem; margin: 0; }
+.member-card__affil { font-size: 1rem; line-height: 1.5; color: var(--slate); margin: 0; max-width: none; }
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem; padding: 0; margin: 0.2rem 0; }
 .tag {
-  font-size: 0.68rem;
+  font-size: 0.82rem;
   letter-spacing: 0.02em;
   background: var(--accent-wash);
   color: var(--accent);
-  padding: 0.18rem 0.5rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 2px;
   white-space: nowrap;
 }
-.member-card__countries { font-size: 0.76rem; color: var(--slate-light); margin: 0.1rem 0 0; max-width: none; }
-.member-card__countries span { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.62rem; color: var(--slate-light); display: block; margin-bottom: 0.15rem; }
+.member-card__countries { font-size: 0.95rem; line-height: 1.5; color: var(--slate-light); margin: 0.1rem 0 0; max-width: none; }
+.member-card__countries span { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--slate-light); display: block; margin-bottom: 0.15rem; }
 .member-card__link {
   margin-top: auto;
   padding-top: 0.4rem;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.03em;
 }
@@ -427,7 +435,7 @@ figcaption, .figcredit {
 }
 .filters__field { display: flex; flex-direction: column; gap: 0.35rem; flex: 1 1 200px; }
 .filters__field label {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -435,7 +443,7 @@ figcaption, .figcredit {
 }
 .filters input, .filters select {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 1rem;
   padding: 0.55rem 0.7rem;
   border: 1px solid var(--border);
   background: var(--white);
@@ -447,13 +455,13 @@ figcaption, .figcredit {
   border: none;
   color: var(--accent);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   padding: 0.55rem 0.2rem;
 }
 .filters__clear:hover, .linklike:hover { text-decoration: underline; }
-.filters__count { font-size: 0.82rem; color: var(--slate-light); margin: 1rem 0 0; letter-spacing: 0.03em; }
+.filters__count { font-size: 0.9rem; color: var(--slate-light); margin: 1rem 0 0; letter-spacing: 0.03em; }
 .member-empty { margin-top: 2rem; color: var(--slate); }
 
 /* ---------- research story (editorial scrollable layout) ---------- */
@@ -484,7 +492,7 @@ figcaption, .figcredit {
 .story__byline .date { color: var(--slate-light); }
 .story__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.3rem; }
 .story__tag {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border: 1px solid var(--border);
@@ -524,12 +532,12 @@ figcaption, .figcredit {
   color: var(--accent);
   line-height: 1;
 }
-.stat__label { font-size: 0.82rem; color: var(--slate); margin-top: 0.5rem; line-height: 1.4; }
+.stat__label { font-size: 0.9rem; color: var(--slate); margin-top: 0.5rem; line-height: 1.4; }
 
 /* stacked composition bar (pure CSS, no chart library) */
 .bar-block { margin: 2.6rem 0; }
 .bar-block__title {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -621,7 +629,7 @@ figcaption, .figcredit {
 }
 .story__source h4 {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--slate-light);
@@ -639,7 +647,7 @@ figcaption, .figcredit {
 .story-list .story-card:last-child { border-bottom: 1px solid var(--border); }
 .story-card:hover { text-decoration: none; }
 .story-card__meta {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -654,7 +662,7 @@ figcaption, .figcredit {
 .brief-card { display: flex; gap: 1.5rem; align-items: flex-start; }
 .brief-card__faces { display: flex; flex-shrink: 0; width: 5.5rem; padding-top: 0.2rem; }
 .brief-card__faces img {
-  width: 3.4rem; height: 3.4rem; border-radius: 50%; object-fit: cover;
+  width: 3.4rem; height: 3.4rem; border-radius: 50%; object-fit: cover; object-position: 50% 12%;
   border: 2px solid var(--paper); display: block;
 }
 .brief-card__faces img + img { margin-left: -1.3rem; }
@@ -684,7 +692,7 @@ figcaption, .figcredit {
 }
 .site-footer h4 {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #9b9488;
@@ -712,7 +720,7 @@ figcaption, .figcredit {
   margin: 2.5rem auto 0;
   padding: 1.4rem var(--pad-x) 0;
   border-top: 1px solid #34332f;
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: #8a847a;
   display: flex;
   justify-content: space-between;

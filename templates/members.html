@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="section">
+<section class="section section--intro">
   <div class="wrap">
-    <div class="reveal" style="max-width:48rem;">
-      <p class="eyebrow">Members</p>
-      <h1>{{ page.heading }}</h1>
+    <div class="page-intro reveal">
+      <div>
+        <h1>{{ page.heading }}</h1>
+      </div>
       <p class="lede">{{ page.intro }}</p>
     </div>
   </div>
@@ -14,7 +15,6 @@
 {% if members_data.leadership %}
 <section class="section section--alt">
   <div class="wrap">
-    <p class="eyebrow">Leadership</p>
     <h2>{{ page.leadership_heading }}</h2>
     <div class="member-grid member-grid--lead">
       {% for m in members_data.leadership %}
@@ -27,7 +27,6 @@
 
 <section class="section" id="directory">
   <div class="wrap">
-    <p class="eyebrow">Find an expert</p>
     <h2>{{ page.directory_heading }}</h2>
     <p style="max-width:42rem;color:var(--slate);">{{ page.directory_intro }}</p>
 
@@ -68,7 +67,6 @@
 {% if members_data.phd_students %}
 <section class="section section--alt">
   <div class="wrap">
-    <p class="eyebrow">Early career</p>
     <h2>{{ page.phd_heading }}</h2>
     <div class="member-grid member-grid--lead">
       {% for m in members_data.phd_students %}

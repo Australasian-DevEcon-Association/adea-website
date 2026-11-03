@@ -29,14 +29,22 @@
       "role": "Secretary"
     },
     {
-      "name": "Astghik Mavisakalyan",
-      "slug": "astghik-mavisakalyan",
-      "topics": [],
-      "countries": [],
-      "link": "https://bcec.edu.au/about/people/astghik-mavisakalyan/",
-      "photo": "members/astghik-mavisakalyan.jpg",
+      "name": "Esther Mirjam Girsberger",
+      "slug": "esther-mirjam-girsberger",
+      "topics": [
+        "Labour Markets",
+        "Public Policy",
+        "Gender"
+      ],
+      "countries": [
+        "Sub-Saharan Africa (esp. West Africa)",
+        "South America"
+      ],
+      "link": "https://emgirsberger.weebly.com",
+      "photo": "members/esther-mirjam-girsberger.jpg",
       "group": "leadership",
-      "role": "Public Officer"
+      "role": "Public Officer",
+      "institution": "The University of Technology Sydney, AUS"
     }
   ],
   "members": [
@@ -56,6 +64,7 @@
       ],
       "link": "https://img1.wsimg.com/blobby/go/f32c246f-01c4-4525-a4bb-b5ebd328fd15/downloads/CV%20Ian%20Anderson%202024.pdf?ver=1711084441236",
       "photo": "members/ian-anderson.jpg",
+      "photo_position": "50% 0%",
       "group": "members",
       "institution": "Independent Researcher, AUS"
     },
@@ -150,10 +159,10 @@
         "India",
         "South East Asia"
       ],
-      "link": "https://people.unisa.edu.au/rajabrata.banerjee",
+      "link": "https://researchers.adelaide.edu.au/profile/rajabrata.banerjee",
       "photo": "members/rajabrata-banerjee.jpg",
       "group": "members",
-      "institution": "University of South Australia, AUS"
+      "institution": "Adelaide University, AUS"
     },
     {
       "name": "Victoria Baranov",
@@ -172,6 +181,7 @@
       ],
       "link": "https://sites.google.com/site/victoriabaranov/home",
       "photo": "members/victoria-baranov.jpg",
+      "photo_position": "50% 29%",
       "group": "members",
       "institution": "The University of Melbourne, AUS"
     },
@@ -270,23 +280,6 @@
       "institution": "Institute of Policy Studies of Sri Lanka, LKA"
     },
     {
-      "name": "Esther Mirjam Girsberger",
-      "slug": "esther-mirjam-girsberger",
-      "topics": [
-        "Labour Markets",
-        "Public Policy",
-        "Gender"
-      ],
-      "countries": [
-        "Sub-Saharan Africa (esp. West Africa)",
-        "South America"
-      ],
-      "link": "https://emgirsberger.weebly.com",
-      "photo": "members/esther-mirjam-girsberger.jpg",
-      "group": "members",
-      "institution": "The University of Technology Sydney, AUS"
-    },
-    {
       "name": "Rohan Gudibande",
       "slug": "rohan-gudibande",
       "topics": [
@@ -338,6 +331,7 @@
       ],
       "link": "https://chrishoyeconomist.com/",
       "photo": "members/christopher-hoy.jpg",
+      "photo_position": "50% 0%",
       "group": "members",
       "institution": "World Bank Group"
     },
@@ -414,6 +408,16 @@
       "topics_source": "https://scholar.google.com/citations?user=zggTABYAAAAJ"
     },
     {
+      "name": "Astghik Mavisakalyan",
+      "slug": "astghik-mavisakalyan",
+      "topics": [],
+      "countries": [],
+      "link": "https://bcec.edu.au/about/people/astghik-mavisakalyan/",
+      "photo": "members/astghik-mavisakalyan.jpg",
+      "group": "members",
+      "institution": "Curtin University, AUS"
+    },
+    {
       "name": "Xin Meng",
       "slug": "xin-meng",
       "topics": [
@@ -483,6 +487,7 @@
       ],
       "link": "https://christopherparsons.weebly.com",
       "photo": "members/christopher-parsons.jpg",
+      "photo_position": "50% 85%",
       "group": "members",
       "institution": "The University of Western Australia, AUS"
     },
@@ -680,6 +685,7 @@
       ],
       "link": "https://academics.rmit.edu.au/longfeng-ye/publications",
       "photo": "members/longfeng-ye.jpg",
+      "photo_position": "50% 45%",
       "group": "members",
       "institution": "RMIT University, AUS"
     },
@@ -739,6 +745,7 @@
       ],
       "link": "https://rse.anu.edu.au/about/staff-directory/lolita-moorena",
       "photo": "members/lolita-moorena.jpg",
+      "photo_position": "50% 25%",
       "group": "phd_students",
       "institution": "The Australian National University"
     },
@@ -757,10 +764,10 @@
         "United States of America",
         "United Kingdom"
       ],
-      "link": "https://researchers.mq.edu.au/en/persons/mohammad-alam",
+      "link": "https://www.linkedin.com/in/dr-mohammad-nure-alam-6a314023a/",
       "photo": "members/mohammad-nure-alam.jpg",
       "group": "phd_students",
-      "institution": "Macquarie University"
+      "institution": "University of Sydney"
     }
   ],
   "topics": [
