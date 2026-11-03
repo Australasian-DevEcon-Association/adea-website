@@ -223,14 +223,14 @@ strong { font-weight: 600; color: var(--ink-strong); }
   background: var(--paper-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: clamp(4rem, 11vw, 9rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
 }
 .quote-band blockquote { margin: 0; max-width: none; }
 .quote-band p {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(2.2rem, 5.4vw, 4.6rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
   line-height: 1.14;
   color: var(--ink-strong);
   max-width: none;

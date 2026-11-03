@@ -205,6 +205,8 @@ def main():
     members_data = load_members()
     stories = load_stories()
     ctx = dict(news=news, members_data=members_data, stories=stories)
+    research_meta, _ = parse_frontmatter(os.path.join(CONTENT, "stories.md"))
+    env.globals["latest_briefs"] = (research_meta.get("briefs") or [])[:3]
 
     # top-level pages
     for fn, out in [("home.md", "index.html"), ("about.md", "about.html"),

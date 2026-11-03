@@ -10,7 +10,7 @@
         <h1 class="hero__title">{{ page.hero_title | safe }}</h1>
         <p class="lede">{{ page.lede }}</p>
         <p style="margin-top:1.8rem;">
-          <a class="btn btn--accent" href="#join">Join the association &#10230;</a>
+          <a class="btn btn--accent" href="{{ rel }}join.html">Join the association &#10230;</a>
         </p>
       </div>
       <div class="hero__media reveal">
@@ -52,5 +52,16 @@
     <p style="margin-top:2rem;"><a class="read-more" href="{{ rel }}news.html">All news and events &#10230;</a></p>
   </div>
 </section>
+
+{% if latest_briefs %}
+<section class="section">
+  <div class="wrap">
+    <h2>Recent research by our members</h2>
+    {% set briefs = latest_briefs %}
+    {% include "partials/brief_list.html" %}
+    <p style="margin-top:2rem;"><a class="read-more" href="{{ rel }}stories.html">All research &#10230;</a></p>
+  </div>
+</section>
+{% endif %}
 
 {% endblock %}
