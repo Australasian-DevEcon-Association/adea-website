@@ -3,7 +3,7 @@ template: join
 title: Join or renew
 nav: join
 heading: Join or renew
-intro: Membership fees support ADEA's work. Your membership lasts a year from the date you pay, and all members are listed in the members directory.
+intro: "Membership fees support ADEA's work. Your membership will last one year from the date when you sign up. While you're a member, you'll be listed in the <a href=\"members.html\">members directory</a>."
 tiers:
   - name: Full membership
     price: A$100
