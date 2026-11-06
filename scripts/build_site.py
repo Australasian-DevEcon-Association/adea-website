@@ -25,6 +25,8 @@ SITE = {
     "short": "ADEA",
     "description": "A non-profit community of researchers advancing development "
                    "economics across the Australasian region.",
+    # public address with trailing slash; used for sitemap.xml and robots.txt
+    "url": "https://australasian-devecon-association.github.io/adea-website/",
 }
 # Build year is passed in so the result is deterministic in CI.
 YEAR = datetime.date.today().year
@@ -194,6 +196,22 @@ def render_page(meta, body, out_relpath, news=None, members_data=None, stories=N
         year=YEAR, rel=rel_for(out_relpath),
     )
     write(out_relpath, html)
+    PAGES.append(out_relpath)
+
+
+PAGES = []
+
+
+def write_crawler_files():
+    """Write sitemap.xml and robots.txt listing every rendered page."""
+    base = SITE["url"]
+    urls = "\n".join(f"  <url><loc>{base}{'' if p == 'index.html' else p}</loc></url>"
+                     for p in PAGES)
+    write("sitemap.xml",
+          '<?xml version="1.0" encoding="UTF-8"?>\n'
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+          f"{urls}\n</urlset>\n")
+    write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {base}sitemap.xml\n")
 
 
 def main():
@@ -222,6 +240,8 @@ def main():
     # research stories
     for s in stories:
         render_page(s, s["body"], s["url"], **ctx)
+
+    write_crawler_files()
 
     # static assets
     shutil.copytree(ASSETS, os.path.join(OUT, "assets"), dirs_exist_ok=True)

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>document.documentElement.className += ' js';</script>
   <title>{% block title %}{{ page.title }} — {{ site.name }}{% endblock %}</title>
-  <meta name="description" content="{{ page.description | default(site.description) }}">
+  <meta name="description" content="{{ (page.description or page.excerpt or page.lede or page.intro or site.description) | striptags }}">
   <link rel="icon" type="image/png" href="{{ rel }}assets/images/adea-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
