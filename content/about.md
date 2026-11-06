@@ -3,7 +3,7 @@ template: about
 title: About
 nav: about
 heading: About the association
-intro: We are the Australasian Development Economics Association, a non-profit organisation that aims to promote and advance the field of development economics in the Australasian region. We are a community of researchers who share a common passion for understanding and improving the lives of people in developing countries.
+intro: We are the Australasian Development Economics Association, an organisation that aims to promote and advance the field of development economics in the Australasian region. We are a community of researchers who share a common passion for understanding and improving the lives of people in developing countries.
 hero_image: road-transport.jpg
 hero_alt: Passengers riding a loaded vehicle on a rural road in the Asia-Pacific
 mission_heading: What we set out to do

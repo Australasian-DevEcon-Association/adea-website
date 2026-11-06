@@ -23,7 +23,7 @@ OUT = os.path.join(ROOT, "_site")
 SITE = {
     "name": "Australasian Development Economics Association",
     "short": "ADEA",
-    "description": "A non-profit community of researchers advancing development "
+    "description": "A community of researchers advancing development "
                    "economics across the Australasian region.",
     # public address with trailing slash; used for sitemap.xml and robots.txt
     "url": "https://australasian-devecon-association.github.io/adea-website/",
