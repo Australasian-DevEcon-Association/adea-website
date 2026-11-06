@@ -21,8 +21,18 @@
     {
       "name": "Shyamal Chowdhury",
       "slug": "shyamal-chowdhury",
-      "topics": [],
-      "countries": [],
+      "topics": [
+        "Economic Development",
+        "Migration",
+        "Microfinance",
+        "Social and Emotional Skills",
+        "Technology Adoption"
+      ],
+      "countries": [
+        "Bangladesh",
+        "Kenya",
+        "Indonesia"
+      ],
       "link": "https://scholar.google.com/citations?hl=en&user=Yfgg4RoAAAAJ",
       "photo": "members/shyamal-chowdhury.jpg",
       "group": "leadership",
@@ -37,8 +47,10 @@
         "Gender"
       ],
       "countries": [
-        "Sub-Saharan Africa (esp. West Africa)",
-        "South America"
+        "Burkina Faso",
+        "Côte d'Ivoire",
+        "Senegal",
+        "Chile"
       ],
       "link": "https://emgirsberger.weebly.com",
       "photo": "members/esther-mirjam-girsberger.jpg",
@@ -791,6 +803,7 @@
     "Development Finance",
     "Digital Technology",
     "Disability",
+    "Economic Development",
     "Economic Evaluation",
     "Economic History",
     "Economics of Education",
@@ -821,6 +834,7 @@
     "Labour Markets",
     "Macroeconomics",
     "Mental Health",
+    "Microfinance",
     "Migration",
     "Natural Disasters",
     "New Structural Economics",
@@ -840,9 +854,11 @@
     "Regional Growth",
     "Resource Economics",
     "SMEs",
+    "Social and Emotional Skills",
     "Social Inclusion",
     "Social Protection",
     "SRH/Family Planning",
+    "Technology Adoption",
     "Trade",
     "Well-being"
   ],
@@ -852,7 +868,10 @@
     "Australia",
     "Bangladesh",
     "Brazil",
+    "Burkina Faso",
+    "Chile",
     "China",
+    "Côte d'Ivoire",
     "East Asia",
     "EU",
     "Fiji",
@@ -873,6 +892,7 @@
     "Papua New Guinea",
     "Philippines",
     "PNG",
+    "Senegal",
     "Solomon Islands",
     "South America",
     "South Asia",
@@ -881,7 +901,6 @@
     "Sri Lanka",
     "Sub-Saharan Africa",
     "Sub-Saharan Africa (esp. Sierra Leone)",
-    "Sub-Saharan Africa (esp. West Africa)",
     "Switzerland",
     "the Pacific",
     "Timor Leste",
