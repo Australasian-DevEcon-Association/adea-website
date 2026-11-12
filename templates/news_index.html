@@ -11,7 +11,7 @@
     <div class="event reveal">
       <div>
         <p class="eyebrow">Upcoming</p>
-        <h3>{{ page.event.title }}</h3>
+        <h2>{{ page.event.title }}</h2>
         <p style="color:var(--slate);">{{ page.event.summary }}</p>
         <p class="event__meta">{{ page.event.meta }}</p>
         {% if page.event.link %}
@@ -32,7 +32,7 @@
         </div>
         <div>
           {% if post.date_display %}<div class="news-item__date">{{ post.date_display }}{% if post.author %} &middot; {{ post.author }}{% endif %}</div>{% endif %}
-          <h3><a href="{{ rel }}{{ post.url }}">{{ post.title }}</a></h3>
+          <h2><a href="{{ rel }}{{ post.url }}">{{ post.title }}</a></h2>
           <p>{{ post.excerpt }}</p>
           <a class="read-more" href="{{ rel }}{{ post.url }}">Read more &#10230;</a>
         </div>

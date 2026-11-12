@@ -29,6 +29,7 @@
       <p class="lede">{{ page.briefs_intro | safe }}</p>
     </div>
     {% set briefs = page.briefs %}
+    {% set brief_tag = 'h3' if stories else 'h2' %}
     {% include "partials/brief_list.html" %}
     {% endif %}
   </div>

@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="{{ rel }}assets/css/site.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   {% include "partials/header.html" %}
-  <main>
+  <main id="main">
     {% block content %}{% endblock %}
   </main>
   {% include "partials/footer.html" %}
