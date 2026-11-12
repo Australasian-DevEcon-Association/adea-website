@@ -27,7 +27,7 @@ SITE = {
     "description": "A community of researchers advancing development "
                    "economics across the Australasian region.",
     # public address with trailing slash; used for sitemap.xml and robots.txt
-    "url": "https://australasian-devecon-association.github.io/adea-website/",
+    "url": "https://ausdevea.org/",
 }
 # Build year is passed in so the result is deterministic in CI.
 YEAR = datetime.date.today().year
