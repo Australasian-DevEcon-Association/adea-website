@@ -9,7 +9,7 @@
         <div>
           <div class="story-card__meta">{{ b.outlet }} &middot; {{ b.date }}</div>
           <h3>{{ b.title }}</h3>
-          {% if b.authors %}<p class="brief-card__authors">{{ b.authors }}</p>{% endif %}
+          {% if b.authors %}<p class="brief-card__authors">{{ b.authors | mark_members(b.members) }}</p>{% endif %}
         </div>
       </a>
       {% endfor %}

@@ -13,6 +13,7 @@ import datetime
 import markdown
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup, escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "content")
@@ -38,6 +39,30 @@ env = Environment(
     trim_blocks=True,
     lstrip_blocks=True,
 )
+
+
+def fold(text):
+    return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+
+
+AUTHOR_SEP = r",\s*(?:and\s+)?|\s+and\s+"
+
+
+def mark_members(authors, slugs):
+    """Bold each author whose surname matches the last part of a member slug."""
+    surnames = {fold(s.split("-")[-1]) for s in slugs or []}
+    names = re.split(AUTHOR_SEP, authors)
+    seps = re.findall(AUTHOR_SEP, authors)
+    out = []
+    for i, name in enumerate(names):
+        hit = surnames & set(fold(name).split())
+        out.append(Markup("<strong>%s</strong>") % name if hit else escape(name))
+        if i < len(seps):
+            out.append(escape(seps[i]))
+    return Markup("").join(out)
+
+
+env.filters["mark_members"] = mark_members
 
 
 def parse_frontmatter(path):
